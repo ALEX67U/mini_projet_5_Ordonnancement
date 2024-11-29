@@ -5,9 +5,12 @@
 #include "machine.h"
 #include "heuristic.h"
 #include "genetic.h"
+#include "utils.h"
 
 int main()
 {
+    init_rand();
+
     T_TASK T1 = new_task(1, 2, 4, 3);
     T_TASK T2 = new_task(2, 1, 3, 5);
     T_TASK T3 = new_task(3, 4, 2, 2);
@@ -18,6 +21,7 @@ int main()
     T_TASK * TASKS[] = {&T1,&T2,&T3,&T4,&T5,&T6};
     T_MACHINE * M ;
 
+    printf("==================== heuristique 1 ====================");
     M = heuristic(2,6,TASKS,H1_R);
     print_machine(&M[0]);
     print_machine(&M[1]);
@@ -27,6 +31,7 @@ int main()
     free_machine(&M[0]);
     free_machine(&M[1]);
 
+    printf("==================== heuristique 2 ====================");
     M = heuristic(2,6,TASKS,H2_W);
     print_machine(&M[0]);
     print_machine(&M[1]);
@@ -36,6 +41,7 @@ int main()
     free_machine(&M[0]);
     free_machine(&M[1]);
 
+    printf("==================== heuristique 3 ====================");
     M = heuristic(2,6,TASKS,H3_P);
     print_machine(&M[0]);
     print_machine(&M[1]);
@@ -45,16 +51,22 @@ int main()
     free_machine(&M[0]);
     free_machine(&M[1]);
 
+    printf("==================== heuristique 4 ====================");
     M = heuristic(2,6,TASKS,H4_WP);
     print_machine(&M[0]);
     print_machine(&M[1]);
     chart_machine(&M[0]);
     chart_machine(&M[1]);
 
+    printf("==================== Codage ====================");
     T_SOLUTION S = init_new_solution(2,6,M);
     print_solution(&S);
-
     printf("evaluation = %d\n",evaluate_solution(&S,TASKS));
+
+    printf("==================== Mutation ====================");
+    T_SOLUTION SM = mutation_solution(&S);
+    print_solution(&SM);
+    printf("evaluation = %d\n",evaluate_solution(&SM,TASKS));
 
     free_solution(&S);
     free_machine(&M[0]);

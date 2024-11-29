@@ -20,6 +20,19 @@ T_SOLUTION init_new_solution(unsigned int m, unsigned int n, T_MACHINE * machine
     return S;
 }
 
+T_SOLUTION copy_solution(T_SOLUTION * solution)
+{
+    T_SOLUTION S;
+    S.n = solution->n;
+    S.m = solution->m;
+    S.codage = (unsigned int *) malloc (size_solution(&S) * sizeof(unsigned int));
+    for (unsigned int i = 0; i < size_solution(solution); i++)
+    {
+        S.codage[i] = solution->codage[i];
+    }
+    return S;
+}
+
 T_TASK *find_task_by_id(T_TASK **tasks, int task_id) {
     for (int t = 0; tasks[t] != NULL; t++)
     {
@@ -100,3 +113,20 @@ void print_solution(T_SOLUTION * solution)
         printf("%u ", solution->codage[i]);
     }
 }
+
+T_SOLUTION mutation_solution(T_SOLUTION * solution)
+{
+   T_SOLUTION S = copy_solution(solution);
+   int i = get_rand(solution->n);
+   int j = get_rand(solution->n);
+
+   if(i == j)
+    j = (j+1)%solution->n;
+
+   unsigned int tmp = S.codage[i];
+   S.codage[i] = S.codage[j];
+   S.codage[j] = tmp;
+
+   return S;
+}
+

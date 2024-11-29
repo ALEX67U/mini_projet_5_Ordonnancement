@@ -47,6 +47,9 @@
 		<Unit filename="src/c/task.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/c/utils.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/header/genetic.h" />
 		<Unit filename="src/header/heuristic.h" />
 		<Unit filename="src/header/machine.h" />
