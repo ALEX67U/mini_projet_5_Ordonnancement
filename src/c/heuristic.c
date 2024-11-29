@@ -1,8 +1,8 @@
 #include "heuristic.h"
 
-T_MACHINE * heuristic(unsigned int m, unsigned int n, T_TASK ** arr, bool (*comparator)(T_TASK*, T_TASK*))
+T_MACHINE * heuristic(unsigned int m, unsigned int n, T_TASK ** tasks, bool (*comparator)(T_TASK*, T_TASK*))
 {
-    quickSort(arr, 0, n - 1, comparator);
+    quickSort(tasks, 0, n - 1, comparator);
     T_MACHINE * M = (T_MACHINE *) malloc (m * sizeof(T_MACHINE));
     unsigned int machine;
     unsigned int min;
@@ -30,37 +30,36 @@ T_MACHINE * heuristic(unsigned int m, unsigned int n, T_TASK ** arr, bool (*comp
                 machine = j;
             }
         }
-        add_task_machine(arr[i],&M[machine]);
+        add_task_machine(tasks[i],&M[machine]);
     }
-
     return M;
 }
 
 // Fonction de tri rapide (QuickSort)
-void quickSort(T_TASK ** arr, int low, int high, bool (*comparator)(T_TASK*, T_TASK*))
+void quickSort(T_TASK ** tasks, int low, int high, bool (*comparator)(T_TASK*, T_TASK*))
 {
     if (low < high) {
-        int pivotIndex = partition(arr, low, high, comparator);
-        quickSort(arr, low, pivotIndex - 1, comparator);
-        quickSort(arr, pivotIndex + 1, high, comparator);
+        int pivotIndex = partition(tasks, low, high, comparator);
+        quickSort(tasks, low, pivotIndex - 1, comparator);
+        quickSort(tasks, pivotIndex + 1, high, comparator);
     }
 }
 
-int partition(T_TASK ** arr, int low, int high, bool (*comparator)(T_TASK*, T_TASK*))
+int partition(T_TASK ** tasks, int low, int high, bool (*comparator)(T_TASK*, T_TASK*))
 {
-    T_TASK *pivot = arr[high];
+    T_TASK *pivot = tasks[high];
     int i = (low - 1);
     for (int j = low; j < high; j++) {
-        if (comparator(arr[j], pivot)) {
+        if (comparator(tasks[j], pivot)) {
             i++;
-            T_TASK *temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+            T_TASK *temp = tasks[i];
+            tasks[i] = tasks[j];
+            tasks[j] = temp;
         }
     }
-    T_TASK *temp = arr[i + 1];
-    arr[i + 1] = arr[high];
-    arr[high] = temp;
+    T_TASK *temp = tasks[i + 1];
+    tasks[i + 1] = tasks[high];
+    tasks[high] = temp;
     return (i + 1);
 }
 

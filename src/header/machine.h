@@ -18,6 +18,7 @@ T_MACHINE init_new_machine(unsigned int ID, unsigned int n , T_TASK ** j);
 T_MACHINE new_machine(unsigned int ID);
 
 unsigned int get_end_machine(T_MACHINE *machine);
+unsigned int get_weighted_sum_machine(T_MACHINE *machine);
 
 void add_task_machine(T_TASK *task, T_MACHINE *machine);
 void free_machine(T_MACHINE * machine);

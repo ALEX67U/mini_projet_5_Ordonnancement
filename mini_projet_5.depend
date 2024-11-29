@@ -33,35 +33,41 @@
 
 1732823021 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini-projet-\mini_projet_5\src\c\genetic.c
 
-1732823512 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\main.c
+1732902112 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\main.c
 	<stdio.h>
 	<stdlib.h>
 	"task.h"
 	"machine.h"
 	"heuristic.h"
+	"genetic.h"
 
 1732818584 c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\header\task.h
 	<stdio.h>
 
-1732818584 c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\header\machine.h
+1732901622 c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\header\machine.h
 	<stdio.h>
 	<stdlib.h>
 	"task.h"
 
-1732818584 c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\header\heuristic.h
+1732895271 c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\header\heuristic.h
 	<stdbool.h>
 	<stdint.h>
 	"task.h"
 	"machine.h"
 
-1732823021 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\c\genetic.c
+1732901598 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\c\genetic.c
+	"genetic.h"
 
-1732822096 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\c\heuristic.c
+1732895271 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\c\heuristic.c
 	"heuristic.h"
 
-1732821773 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\c\machine.c
+1732901024 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\c\machine.c
 	"machine.h"
 
 1732818584 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\c\task.c
+	"task.h"
+
+1732900019 c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\header\genetic.h
+	"machine.h"
 	"task.h"
 

@@ -4,6 +4,7 @@
 #include "task.h"
 #include "machine.h"
 #include "heuristic.h"
+#include "genetic.h"
 
 int main()
 {
@@ -17,39 +18,48 @@ int main()
     T_TASK * TASKS[] = {&T1,&T2,&T3,&T4,&T5,&T6};
     T_MACHINE * M ;
 
-    T_TASK * TASK_H2_M1[] = {&T6,&T4,&T3};
-    T_TASK * TASK_H2_M2[] = {&T2,&T1,&T5};
+    M = heuristic(2,6,TASKS,H1_R);
+    print_machine(&M[0]);
+    print_machine(&M[1]);
+    chart_machine(&M[0]);
+    chart_machine(&M[1]);
 
-    T_MACHINE M1 = init_new_machine(1,3,TASK_H2_M1);
-    T_MACHINE M2 = init_new_machine(2,3,TASK_H2_M2);
-    print_machine(&M1);
-    print_machine(&M2);
-    chart_machine(&M1);
-    chart_machine(&M2);
+    free_machine(&M[0]);
+    free_machine(&M[1]);
 
-//    M = heuristic(2,6,TASKS,H1_R);
-//    print_machine(&M[0]);
-//    print_machine(&M[1]);
-//    chart_machine(&M[0]);
-//    chart_machine(&M[1]);
-//
     M = heuristic(2,6,TASKS,H2_W);
     print_machine(&M[0]);
     print_machine(&M[1]);
     chart_machine(&M[0]);
     chart_machine(&M[1]);
-//
-//    M = heuristic(2,6,TASKS,H3_P);
-//    print_machine(&M[0]);
-//    print_machine(&M[1]);
-//    chart_machine(&M[0]);
-//    chart_machine(&M[1]);
-//
-//    M = heuristic(2,6,TASKS,H4_WP);
-//    print_machine(&M[0]);
-//    print_machine(&M[1]);
-//    chart_machine(&M[0]);
-//    chart_machine(&M[1]);
+
+    free_machine(&M[0]);
+    free_machine(&M[1]);
+
+    M = heuristic(2,6,TASKS,H3_P);
+    print_machine(&M[0]);
+    print_machine(&M[1]);
+    chart_machine(&M[0]);
+    chart_machine(&M[1]);
+
+    free_machine(&M[0]);
+    free_machine(&M[1]);
+
+    M = heuristic(2,6,TASKS,H4_WP);
+    print_machine(&M[0]);
+    print_machine(&M[1]);
+    chart_machine(&M[0]);
+    chart_machine(&M[1]);
+
+    T_SOLUTION S = init_new_solution(2,6,M);
+    print_solution(&S);
+
+    printf("evaluation = %d\n",evaluate_solution(&S,TASKS));
+
+    free_solution(&S);
+    free_machine(&M[0]);
+    free_machine(&M[1]);
+    free(M);
 
     return 0;
 }
