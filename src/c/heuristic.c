@@ -1,5 +1,14 @@
 #include "heuristic.h"
 
+/**
+ * @brief Applique une heuristique pour répartir les tâches entre plusieurs machines.
+ *
+ * @param m Nombre de machines.
+ * @param n Nombre de tâches.
+ * @param tasks Tableau des tâches.
+ * @param comparator Fonction de comparaison pour trier les tâches (par exemple, par temps de début, poids, etc.).
+ * @return T_MACHINE* Tableau des machines avec les tâches assignées.
+ */
 T_MACHINE * heuristic(unsigned int m, unsigned int n, T_TASK ** tasks, bool (*comparator)(T_TASK*, T_TASK*))
 {
     quickSort(tasks, 0, n - 1, comparator);
@@ -35,7 +44,14 @@ T_MACHINE * heuristic(unsigned int m, unsigned int n, T_TASK ** tasks, bool (*co
     return M;
 }
 
-// Fonction de tri rapide (QuickSort)
+/**
+ * @brief Trie un tableau de tâches en utilisant l'algorithme QuickSort.
+ *
+ * @param tasks Tableau des tâches à trier.
+ * @param low Indice de début du sous-tableau à trier.
+ * @param high Indice de fin du sous-tableau à trier.
+ * @param comparator Fonction de comparaison pour trier les tâches.
+ */
 void quickSort(T_TASK ** tasks, int low, int high, bool (*comparator)(T_TASK*, T_TASK*))
 {
     if (low < high) {
@@ -45,6 +61,15 @@ void quickSort(T_TASK ** tasks, int low, int high, bool (*comparator)(T_TASK*, T
     }
 }
 
+/**
+ * @brief Partitionne un sous-tableau de tâches autour d'un pivot pour le tri QuickSort.
+ *
+ * @param tasks Tableau des tâches.
+ * @param low Indice de début du sous-tableau à partitionner.
+ * @param high Indice de fin du sous-tableau à partitionner.
+ * @param comparator Fonction de comparaison des tâches.
+ * @return int L'indice du pivot après partition.
+ */
 int partition(T_TASK ** tasks, int low, int high, bool (*comparator)(T_TASK*, T_TASK*))
 {
     T_TASK *pivot = tasks[high];
@@ -63,21 +88,53 @@ int partition(T_TASK ** tasks, int low, int high, bool (*comparator)(T_TASK*, T_
     return (i + 1);
 }
 
+/**
+ * @brief Comparateur pour trier les tâches par date de début au plus tôt (R).
+ *
+ * @param T1 Pointeur vers la première tâche.
+ * @param T2 Pointeur vers la deuxième tâche.
+ * @return true Si la date de début de T1 est antérieure à celle de T2.
+ * @return false Sinon.
+ */
 bool H1_R(T_TASK * T1,T_TASK * T2)
 {
     return T1->R < T2->R;
 }
 
+/**
+ * @brief Comparateur pour trier les tâches par poids (W) de manière décroissante.
+ *
+ * @param T1 Pointeur vers la première tâche.
+ * @param T2 Pointeur vers la deuxième tâche.
+ * @return true Si le poids de T1 est supérieur à celui de T2.
+ * @return false Sinon.
+ */
 bool H2_W(T_TASK * T1,T_TASK * T2)
 {
     return T1->W > T2->W;
 }
 
+/**
+ * @brief Comparateur pour trier les tâches par durée opératoire (P) croissante.
+ *
+ * @param T1 Pointeur vers la première tâche.
+ * @param T2 Pointeur vers la deuxième tâche.
+ * @return true Si la durée opératoire de T1 est inférieure à celle de T2.
+ * @return false Sinon.
+ */
 bool H3_P(T_TASK * T1,T_TASK * T2)
 {
     return T1->P < T2->P;
 }
 
+/**
+ * @brief Comparateur pour trier les tâches par le ratio poids/durée (W/P) croissant.
+ *
+ * @param T1 Pointeur vers la première tâche.
+ * @param T2 Pointeur vers la deuxième tâche.
+ * @return true Si le ratio W/P de T1 est inférieur à celui de T2.
+ * @return false Sinon.
+ */
 bool H4_WP(T_TASK * T1,T_TASK * T2)
 {
     return (T1->W/(float)T1->P) < (T2->W/(float)T2->P);

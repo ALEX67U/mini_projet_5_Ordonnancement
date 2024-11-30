@@ -10,7 +10,7 @@ typedef struct {
     unsigned int W; // Le poids de la tâche j.
 } T_TASK;
 
-T_TASK new_task(unsigned int ID,unsigned int R,unsigned int P,unsigned int W);
+T_TASK * new_task(unsigned int ID,unsigned int R,unsigned int P,unsigned int W);
 
 void print_task(T_TASK * task);
 

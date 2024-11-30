@@ -9,4 +9,6 @@ void init_rand();
 
 int get_rand(unsigned int max);
 
+void fisherYatesShuffle(unsigned int * array, int n) ;
+
 #endif // UTILS_H_INCLUDED

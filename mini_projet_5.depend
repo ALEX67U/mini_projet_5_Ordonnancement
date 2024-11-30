@@ -33,7 +33,7 @@
 
 1732823021 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini-projet-\mini_projet_5\src\c\genetic.c
 
-1732919267 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\main.c
+1732995331 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\main.c
 	<stdio.h>
 	<stdlib.h>
 	"task.h"
@@ -42,7 +42,7 @@
 	"genetic.h"
 	"utils.h"
 
-1732818584 c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\header\task.h
+1732995085 c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\header\task.h
 	<stdio.h>
 
 1732901622 c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\header\machine.h
@@ -56,28 +56,30 @@
 	"task.h"
 	"machine.h"
 
-1732919023 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\c\genetic.c
+1732994360 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\c\genetic.c
 	"genetic.h"
 
-1732895271 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\c\heuristic.c
+1732994210 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\c\heuristic.c
 	"heuristic.h"
 
-1732901024 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\c\machine.c
+1732994210 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\c\machine.c
 	"machine.h"
 
-1732818584 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\c\task.c
+1732995075 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\c\task.c
 	"task.h"
 
-1732919255 c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\header\genetic.h
+1732988228 c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\header\genetic.h
+	<stdbool.h>
 	"machine.h"
+	"heuristic.h"
 	"task.h"
 	"utils.h"
 
-1732919051 c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\header\utils.h
+1732987494 c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\header\utils.h
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 
-1732918813 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\c\utils.c
+1732994210 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\c\utils.c
 	"utils.h"
 
