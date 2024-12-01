@@ -83,9 +83,10 @@
 1732994210 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\c\utils.c
 	"utils.h"
 
-1733050656 source:c:\users\alexa\desktop\git projects\mini_projet_5_ordonnancement\main.c
+1733052231 source:c:\users\alexa\desktop\git projects\mini_projet_5_ordonnancement\main.c
 	<stdio.h>
 	<stdlib.h>
+	<time.h>
 	"task.h"
 	"machine.h"
 	"heuristic.h"
@@ -119,10 +120,10 @@
 	<stdlib.h>
 	<time.h>
 
-1733048316 source:c:\users\alexa\desktop\git projects\mini_projet_5_ordonnancement\src\c\genetic.c
+1733056845 source:c:\users\alexa\desktop\git projects\mini_projet_5_ordonnancement\src\c\genetic.c
 	"genetic.h"
 
-1733050683 source:c:\users\alexa\desktop\git projects\mini_projet_5_ordonnancement\src\c\heuristic.c
+1733058114 source:c:\users\alexa\desktop\git projects\mini_projet_5_ordonnancement\src\c\heuristic.c
 	"heuristic.h"
 
 1733047180 source:c:\users\alexa\desktop\git projects\mini_projet_5_ordonnancement\src\c\machine.c

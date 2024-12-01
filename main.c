@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "task.h"
 #include "machine.h"
@@ -90,6 +91,7 @@ int main(int argc, char *argv[])
     M = heuristic(m,num_tasks,TASKS,H1_R);
     print_machine(&M[0]);
     print_machine(&M[1]);
+    printf("\nTOTAL sum : %u\n",get_weighted_sum_machine(&M[0]) + get_weighted_sum_machine(&M[1]));
     chart_machine(&M[0]);
     chart_machine(&M[1]);
 
@@ -103,6 +105,7 @@ int main(int argc, char *argv[])
     M = heuristic(m,num_tasks,TASKS,H2_W);
     print_machine(&M[0]);
     print_machine(&M[1]);
+    printf("\nTOTAL sum : %u\n",get_weighted_sum_machine(&M[0]) + get_weighted_sum_machine(&M[1]));
     chart_machine(&M[0]);
     chart_machine(&M[1]);
 
@@ -116,6 +119,7 @@ int main(int argc, char *argv[])
     M = heuristic(m,num_tasks,TASKS,H3_P);
     print_machine(&M[0]);
     print_machine(&M[1]);
+    printf("\nTOTAL sum : %u\n",get_weighted_sum_machine(&M[0]) + get_weighted_sum_machine(&M[1]));
     chart_machine(&M[0]);
     chart_machine(&M[1]);
 
@@ -129,6 +133,7 @@ int main(int argc, char *argv[])
     M = heuristic(m,num_tasks,TASKS,H4_WP);
     print_machine(&M[0]);
     print_machine(&M[1]);
+    printf("\nTOTAL sum : %u\n",get_weighted_sum_machine(&M[0]) + get_weighted_sum_machine(&M[1]));
     chart_machine(&M[0]);
     chart_machine(&M[1]);
 
@@ -183,5 +188,6 @@ int main(int argc, char *argv[])
         free(TASKS[i]);  // Libérer chaque tâche allouée
     }
     free(TASKS);  // Libérer le tableau de pointeurs
+    system("pause");
     return 0;
 }

@@ -191,10 +191,11 @@ void print_solution(T_SOLUTION * solution)
         if(solution->n == i)
             printf("|| ");
 
-        if(((solution->codage[k] + j) == i) && (m < solution->m) && (solution->n > i))
+        if(((solution->codage[k] + j) == i) && (solution->n > i)&& (m < solution->m))
         {
             printf("| ");
             k++;
+            m++;
             j += solution->codage[k];
         }
         printf("%u ", solution->codage[i]);

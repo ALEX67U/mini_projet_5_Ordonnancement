@@ -35,7 +35,15 @@ T_MACHINE * heuristic(unsigned int m, unsigned int n, T_TASK ** tasks, bool (*co
                 break;
             }
 
-            if(min > end)
+            if(min < 0 && end < 0)
+            {
+                if(min < end)
+                {
+                    min = end;
+                    machine = j;
+                }
+            }
+            else if(min > end)
             {
                 min = end;
                 machine = j;
