@@ -34,3 +34,8 @@ void fisherYatesShuffle(unsigned int * array, int n)
         array[j] = temp;
     }
 }
+
+unsigned int absolu(int x)
+{
+    return (x < 0) ? -x : x;
+}

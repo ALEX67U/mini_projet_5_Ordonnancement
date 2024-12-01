@@ -14,26 +14,28 @@ T_MACHINE * heuristic(unsigned int m, unsigned int n, T_TASK ** tasks, bool (*co
     quickSort(tasks, 0, n - 1, comparator);
     T_MACHINE * M = (T_MACHINE *) malloc (m * sizeof(T_MACHINE));
     unsigned int machine;
-    unsigned int min;
-    unsigned int end;
+    int min;
+    int end;
 
     for(int i = 0; i < m; i++)
         M[i] = new_machine(i);
 
     for(int i = 0; i < n; i++)
     {
+        int start_task = tasks[i]->R;
         machine = 0;
-        min = UINTMAX_MAX;
+        min = INT_MAX;
         for(int j = 0; j < m; j++)
         {
-            if(M[j].n == 0)
+            end = get_end_machine(&M[j]) - start_task;
+
+            if(end == 0)
             {
                 machine = j;
                 break;
             }
 
-            end = get_end_machine(&M[j]);
-            if(min >= end)
+            if(min > end)
             {
                 min = end;
                 machine = j;
@@ -137,5 +139,6 @@ bool H3_P(T_TASK * T1,T_TASK * T2)
  */
 bool H4_WP(T_TASK * T1,T_TASK * T2)
 {
-    return (T1->W/(float)T1->P) < (T2->W/(float)T2->P);
+    //return (T1->W/(float)T1->P) > (T2->W/(float)T2->P);
+    return ((float)T1->P/T1->W) < ((float)T2->P/T2->W);
 }

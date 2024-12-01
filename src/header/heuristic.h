@@ -3,6 +3,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+#include "utils.h"
 #include "task.h"
 #include "machine.h"
 

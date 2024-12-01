@@ -53,13 +53,12 @@ T_TASK** load_tasks_from_file(const char *filename, unsigned int *num_tasks) {
     return tasks;
 }
 
-
 int main(int argc, char *argv[])
 {
     // Valeurs par défaut pour les paramètres
     int m = 2;     // Nombre de machines
     int p = 100;   // Taille de la population
-    int g = 100;   // Nombre de générations
+    int g = 1000;   // Nombre de générations
 
     // Vérification des arguments passés en ligne de commande
     if (argc > 1)
@@ -91,8 +90,8 @@ int main(int argc, char *argv[])
     M = heuristic(m,num_tasks,TASKS,H1_R);
     print_machine(&M[0]);
     print_machine(&M[1]);
-//    chart_machine(&M[0]);
-//    chart_machine(&M[1]);
+    chart_machine(&M[0]);
+    chart_machine(&M[1]);
 
     T_SOLUTION S1 = init_new_solution(2,num_tasks,M);
 
@@ -104,8 +103,8 @@ int main(int argc, char *argv[])
     M = heuristic(m,num_tasks,TASKS,H2_W);
     print_machine(&M[0]);
     print_machine(&M[1]);
-//    chart_machine(&M[0]);
-//    chart_machine(&M[1]);
+    chart_machine(&M[0]);
+    chart_machine(&M[1]);
 
     T_SOLUTION S2 = init_new_solution(2,num_tasks,M);
 
@@ -117,8 +116,8 @@ int main(int argc, char *argv[])
     M = heuristic(m,num_tasks,TASKS,H3_P);
     print_machine(&M[0]);
     print_machine(&M[1]);
-//    chart_machine(&M[0]);
-//    chart_machine(&M[1]);
+    chart_machine(&M[0]);
+    chart_machine(&M[1]);
 
     T_SOLUTION S3 = init_new_solution(2,num_tasks,M);
 
@@ -130,8 +129,8 @@ int main(int argc, char *argv[])
     M = heuristic(m,num_tasks,TASKS,H4_WP);
     print_machine(&M[0]);
     print_machine(&M[1]);
-//    chart_machine(&M[0]);
-//    chart_machine(&M[1]);
+    chart_machine(&M[0]);
+    chart_machine(&M[1]);
 
     T_SOLUTION S4 = init_new_solution(2,num_tasks,M);
 
@@ -181,7 +180,7 @@ int main(int argc, char *argv[])
     free(SC);
 
     for (unsigned int i = 0; i < num_tasks; i++) {
-        free(TASKS);  // Libérer chaque tâche allouée
+        free(TASKS[i]);  // Libérer chaque tâche allouée
     }
     free(TASKS);  // Libérer le tableau de pointeurs
     return 0;

@@ -83,3 +83,54 @@
 1732994210 source:c:\users\alexandre\desktop\univ\m2\ordo\projetordo\mini_projet_5\src\c\utils.c
 	"utils.h"
 
+1733050656 source:c:\users\alexa\desktop\git projects\mini_projet_5_ordonnancement\main.c
+	<stdio.h>
+	<stdlib.h>
+	"task.h"
+	"machine.h"
+	"heuristic.h"
+	"genetic.h"
+	"utils.h"
+
+1733046205 c:\users\alexa\desktop\git projects\mini_projet_5_ordonnancement\src\header\task.h
+	<stdio.h>
+
+1733046205 c:\users\alexa\desktop\git projects\mini_projet_5_ordonnancement\src\header\machine.h
+	<stdio.h>
+	<stdlib.h>
+	"task.h"
+
+1733047627 c:\users\alexa\desktop\git projects\mini_projet_5_ordonnancement\src\header\heuristic.h
+	<stdbool.h>
+	<stdint.h>
+	"utils.h"
+	"task.h"
+	"machine.h"
+
+1733046205 c:\users\alexa\desktop\git projects\mini_projet_5_ordonnancement\src\header\genetic.h
+	<stdbool.h>
+	"machine.h"
+	"heuristic.h"
+	"task.h"
+	"utils.h"
+
+1733047599 c:\users\alexa\desktop\git projects\mini_projet_5_ordonnancement\src\header\utils.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1733048316 source:c:\users\alexa\desktop\git projects\mini_projet_5_ordonnancement\src\c\genetic.c
+	"genetic.h"
+
+1733050683 source:c:\users\alexa\desktop\git projects\mini_projet_5_ordonnancement\src\c\heuristic.c
+	"heuristic.h"
+
+1733047180 source:c:\users\alexa\desktop\git projects\mini_projet_5_ordonnancement\src\c\machine.c
+	"machine.h"
+
+1733046205 source:c:\users\alexa\desktop\git projects\mini_projet_5_ordonnancement\src\c\task.c
+	"task.h"
+
+1733047599 source:c:\users\alexa\desktop\git projects\mini_projet_5_ordonnancement\src\c\utils.c
+	"utils.h"
+

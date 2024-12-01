@@ -47,6 +47,8 @@ T_MACHINE new_machine(unsigned int ID)
  */
 unsigned int get_end_machine(T_MACHINE *machine)
 {
+    if(machine->n == 0)
+        return 0;
     return machine->Cj[machine->n - 1];
 }
 
